@@ -42,6 +42,15 @@
 
     </properties>
 
+    <!-- Deploy package to GitHub packages -->
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub Maney back app parent</name>
+            <url>https://maven.pkg.github.com/artisan-devs/maney-back-app-parent</url>
+        </repository>
+    </distributionManagement>
+
     <dependencies>
 
         <!-- ########

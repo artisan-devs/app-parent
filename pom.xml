@@ -11,7 +11,7 @@
     </parent>
 
     <groupId>com.artisan</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>app-parent</artifactId>
     <version>0.0.1</version>
     <name>parent</name>
     <description>Personal finance project</description>

@@ -36,6 +36,7 @@
 
         <!-- Infra -->
         <spring-cloud.version>2023.0.1</spring-cloud.version>
+        <spring.kafka.version>3.1.2</spring.kafka.version>
 
         <!-- Tools-->
         <sonar.maven.version>3.10.0.2594</sonar.maven.version>
@@ -231,6 +232,13 @@
                     <artifactId>jersey-apache-client4</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <!-- Messaging -->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+            <version>${spring.kafka.version}</version>
         </dependency>
 
         <!-- Config -->

@@ -53,6 +53,30 @@
         </repository>
     </distributionManagement>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+
+            <dependencies>
+
+                <!-- ########
+               ### APP ###
+               ############# -->
+
+                <!-- Docker -->
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-docker-compose</artifactId>
+                    <version>${spring.boot.version}</version>
+                </dependency>
+            </dependencies>
+
+        </profile>
+    </profiles>
+
     <dependencies>
 
         <!-- ########
@@ -201,13 +225,6 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
             <version>${maven.surefire.plugin}</version>
-        </dependency>
-
-        <!-- Docker -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-docker-compose</artifactId>
-            <version>${spring.boot.version}</version>
         </dependency>
 
         <!-- ########

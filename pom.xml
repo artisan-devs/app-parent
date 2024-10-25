@@ -26,6 +26,8 @@
 
         <!-- App-->
         <cucumber.version>7.9.0</cucumber.version>
+        <instancio.version>5.0.2</instancio.version>
+        <equalsverifier.version>3.17.1</equalsverifier.version>
         <hamcrest.version>2.2</hamcrest.version>
         <junit.platform.version>1.10.1</junit.platform.version>
         <jjwt.version>0.11.5</jjwt.version>
@@ -196,6 +198,20 @@
             <groupId>org.testcontainers</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>${testcontainers.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.instancio</groupId>
+            <artifactId>instancio-core</artifactId>
+            <version>${instancio.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>nl.jqno.equalsverifier</groupId>
+            <artifactId>equalsverifier</artifactId>
+            <version>${equalsverifier.version}</version>
             <scope>test</scope>
         </dependency>
 

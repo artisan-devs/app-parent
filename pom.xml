@@ -49,12 +49,23 @@
 
     </properties>
 
-    <!-- Deploy package to GitHub packages -->
+    <!-- Declare GitHub maven registry -->
+    <repositories>
+        <repository>
+            <id>github</id>
+            <name>GitHub Maven registry for Artisan Devs packages</name>
+            <url>https://maven.pkg.github.com/artisan-devs/app-parent</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <!-- Select GitHub maven registry for deploy -->
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>GitHub Maney back app parent</name>
-            <url>https://maven.pkg.github.com/artisan-devs/maney-back-app-parent</url>
+            <url>https://maven.pkg.github.com/artisan-devs/app-parent</url>
         </repository>
     </distributionManagement>
 

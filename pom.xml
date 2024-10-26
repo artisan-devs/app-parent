@@ -46,6 +46,8 @@
         <!-- Tools-->
         <jacoco.plugin.version>0.8.11</jacoco.plugin.version>
         <sonar.maven.version>3.10.0.2594</sonar.maven.version>
+        <maven-enforcer-plugin.version>3.5.0</maven-enforcer-plugin.version>
+        <restrict.imports.enforcer.version>2.6.0</restrict.imports.enforcer.version>
 
     </properties>
 
@@ -367,22 +369,29 @@
                     <dependency>
                         <groupId>de.skuzzle.enforcer</groupId>
                         <artifactId>restrict-imports-enforcer-rule</artifactId>
-                        <version>2.4.0</version>
+                        <version>${restrict.imports.enforcer.version}</version>
                     </dependency>
                 </dependencies>
                 <executions>
                     <execution>
                         <id>enforce</id>
+                        <phase>validate</phase>
                         <configuration>
                             <rules>
                                 <RestrictImports>
                                     <reason>Please instead use Junit 5.</reason>
+                                    <excludedSourceRoot>${project.basedir}/src/main/java</excludedSourceRoot>
                                     <bannedImports>
                                         <bannedImport>org.junit.Test</bannedImport>
                                         <bannedImport>org.junit.runner.RunWith</bannedImport>
                                         <bannedImport>org.junit.Before</bannedImport>
                                         <bannedImport>org.junit.After</bannedImport>
                                     </bannedImports>
+                                </RestrictImports>
+                                <RestrictImports>
+                                    <reason>Please use AssertJ assertions instead.</reason>
+                                    <excludedSourceRoot>${project.basedir}/src/main/java</excludedSourceRoot>
+                                    <bannedImport>org.junit.jupiter.api.Assertions.**</bannedImport>
                                 </RestrictImports>
                             </rules>
                         </configuration>
